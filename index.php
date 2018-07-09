@@ -11,11 +11,15 @@
 	 crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	
-    <title>todo PHP</title>
+    <title>todo PHP and MYSQL</title>
 	
 </head>
 
 <body>
+
+<div class="heading">
+    <h2>todo PHP MYSQL</h2>
+</div>
 	<nav></nav>
 
 	<header>
@@ -25,7 +29,7 @@
 
 <main> 
 
-
+<div>testa</div>
 
 </main>
 
