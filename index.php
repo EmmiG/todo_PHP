@@ -1,3 +1,21 @@
+<?php 
+//connect to the database
+$database = mysqli_connect('localhost', 'root', '', 'todo');
+
+if (isset($_POST['submit'])) {
+    $task = $_POST['task'];
+    
+    mysqli_query($database, "INSERT INTO todo_php (task) VALUES ('$task')");
+    header('location: index.php');
+    
+}
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
