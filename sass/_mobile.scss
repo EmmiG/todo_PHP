@@ -15,7 +15,6 @@ form{
     padding: 10px;
     background: black;
     border: 1px solid blue;
-    
 }
 
 .task_input{
@@ -24,15 +23,17 @@ form{
     padding: 10px;
     border: 2px solid purple;
     
-    .task_button{
+}
+    
+.task_button{
         height: 39px;
         background: black;
         color: yellow;
         border: 2px solid orange;
         border-radius: 5px;
         padding: 5px 20px;
-    }
 }
+
 
 table{
     width: 50%;
@@ -47,8 +48,12 @@ tr{
 th{
         font-size: 19px;
         color: orange;
-        
-    }
+        padding: 90px;
+}
+
+th#task_table{
+        text-align: center;
+}
 
 th, td{
     border:none;

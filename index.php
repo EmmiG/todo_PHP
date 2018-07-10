@@ -29,7 +29,7 @@
     <thread>
         <tr>
             <th>Number</th>
-            <th>Task</th>
+            <th id="task_table">Task</th>
              <th>Action</th>
             
         </tr>
