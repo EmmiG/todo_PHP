@@ -17,3 +17,60 @@ form{
     border: 1px solid blue;
     
 }
+
+.task_input{
+    width: 73%;
+    height: 15px;
+    padding: 10px;
+    border: 2px solid purple;
+    
+    .task_button{
+        height: 39px;
+        background: black;
+        color: yellow;
+        border: 2px solid orange;
+        border-radius: 5px;
+        padding: 5px 20px;
+    }
+}
+
+table{
+    width: 50%;
+    margin: 30px auto;
+    border-collapse: collapse;
+}
+
+tr{
+    border-bottom: 1px solid red;
+}
+    
+th{
+        font-size: 19px;
+        color: orange;
+        
+    }
+
+th, td{
+    border:none;
+    height: 30px;
+    padding: 2px;
+}
+
+.task{
+    text-align: left;
+}
+
+.delete{
+    text-align: center;
+}
+
+.delete a{
+    color: red;
+    background: black;
+    padding: 1px 6px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+
+

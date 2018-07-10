@@ -24,6 +24,27 @@
 <form metod="POST" action="index.php"><input type="text" name="task" class="task_input">
 <button type="submit" class="task_button" name="submit">Add Task</button>
 </form>
+
+<table>
+    <thread>
+        <tr>
+            <th>Number</th>
+            <th>Task</th>
+             <th>Action</th>
+            
+        </tr>
+    </thread>
+    
+    <tbody>
+        <tr>
+           <td>1</td>
+           <td class="task">This is the first task placeholder</td>
+           <td class="delete"><a href="#">X</a>
+           </td>
+            
+        </tr>
+    </tbody>
+</table>
 	<nav></nav>
 
 	<header>
