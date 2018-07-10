@@ -20,6 +20,10 @@
 <div class="heading">
     <h2>todo PHP MYSQL</h2>
 </div>
+
+<form metod="POST" action="index.php"><input type="text" name="task" class="task_input">
+<button type="submit" class="task_button" name="submit">Add Task</button>
+</form>
 	<nav></nav>
 
 	<header>
