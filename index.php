@@ -1,6 +1,8 @@
 <?php 
+
+/*
 //connect to the database
-$database = mysqli_connect('localhost', 'root', '', 'todo');
+$database = mysqli_connect('localhost', 'root', '', 'todo'); 
 
 if (isset($_POST['submit'])) {
     $task = $_POST['task'];
@@ -9,6 +11,31 @@ if (isset($_POST['submit'])) {
     header('location: index.php');
     
 }
+
+*/
+
+require_once 'init.php';
+
+$itemsQuery =$database->prepare("
+SELECT id, title, completed, createdBy 
+FROM items
+WHERE user = :user
+");
+
+$itemsQuery->execute([
+
+    'user' => $_SESSION['user_id']    
+    
+]);
+
+$items = $itemsQuery->rowCount() ? $itemsQuery : [];
+
+foreach($items as $item){
+    echo $item['task'], '<br>';
+}
+    
+
+
 
 ?>
 
@@ -36,12 +63,34 @@ if (isset($_POST['submit'])) {
 <body>
 
 <div class="heading">
-    <h2>todo PHP MYSQL</h2>
+    <h1>todo PHP MYSQL</h1>
 </div>
 
-<form metod="POST" action="index.php"><input type="text" name="task" class="task_input">
+
+
+
+<form metod="POST" action="index.php"
+metod="post">
+<input type="text" name="task" class="task_input">
 <button type="submit" class="task_button" name="submit">Add Task</button>
 </form>
+
+
+<div class="list"></div>
+<?php if(!empty($items)): ?>
+<ul class="items">
+   <?php foreach($items as $item): ?>
+    <li>
+        <span class="item<?php echo $item['done'] ? ' done' : '' ?>"><?php echo $item['task'];?></span>
+        <?php if(!$item['done']): ?>
+        <a href="#" class="done-button">Mark as done</a>
+        <?php endif; ?>
+    </li>
+    <?php endforeach; ?> 
+</ul>
+<?php else: ?>
+<p>You havent added any items yet</p>
+<?php endif; ?>
 
 <table>
     <thread>
