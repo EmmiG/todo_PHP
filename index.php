@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
 
 */
 
-require_once 'init.php';
+require_once 'partials/init.php';
 
 $itemsQuery =$database->prepare("
 SELECT id, title, completed, createdBy 

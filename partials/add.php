@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'init.php';
+require_once 'partials/init.php';
 
 if(isset($_POST['task'])) {
     $name = trim($_POST['task']);
