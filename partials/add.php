@@ -1,5 +1,7 @@
 <?php 
 
+/*
+
 require_once 'partials/init.php';
 
 if(isset($_POST['task'])) {
@@ -20,4 +22,6 @@ if(isset($_POST['task'])) {
 }
 
 header('location: index.php');
+
+*/
 ?>

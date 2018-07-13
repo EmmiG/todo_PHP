@@ -1,4 +1,4 @@
-<?php
+<?php/*
 
 session_start();
 
@@ -8,3 +8,6 @@ $database = new PDO('mysql:dbname=todo;host=localhost', 'root', 'root')
 if(!isset($_SESSION['user_id'])){
     die('you are not signed in');
 }
+
+
+*/
