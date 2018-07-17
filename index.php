@@ -7,7 +7,7 @@ $database = mysqli_connect('localhost', 'root', 'root', 'todo');
 if (isset($_POST['submit'])) {
     $task = $_POST['task'];
     
-    mysqli_query($database, "INSERT INTO todo_php (task) VALUES ('$task')");
+    mysqli_query($database, "INSERT INTO todo_php (title) VALUES ('$task')");
     header('location: index.php');
     
 }
@@ -69,7 +69,7 @@ foreach($items as $item){
 
 
 
-<form method="POST" action="index.php"
+<form method="POST" action=""
 method="post">
 <input type="text" name="task" class="task_input">
 <button type="submit" class="task_button" name="submit">Add Task</button>
