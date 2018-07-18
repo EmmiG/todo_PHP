@@ -20,4 +20,9 @@ if(isset($_POST["submit"]) && isset($_POST["task"])){
 
 header('Location: ../index.php');
 
+$addedQuery2 = $pdo->prepare(
+    "SELECT * FROM todo_php"
+); 
+
+
 ?>

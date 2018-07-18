@@ -59,13 +59,17 @@ method="post">
     </thread>
     
     <tbody>
-        <tr>
-           <td>1</td>
-           <td class="task">This is the first task placeholder</td>
+       <?php while ($row = mysqli_fetch_array($tasks)) { ?>
+       <tr>
+           <td><?php echo $row['id']; ?></td>
+           <td class="task"><?php echo $row['task']; ?></td>
            <td class="delete"><a href="#">X</a>
            </td>
             
         </tr>
+    
+?php } ?>
+        
     </tbody>
 </table>
 	<nav></nav>
