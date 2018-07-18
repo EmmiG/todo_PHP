@@ -1,8 +1,7 @@
-<?php 
-
+<?php require_once 'partials/database.php';
 
 //connect to the database
-$database = mysqli_connect('localhost', 'root', 'root', 'todo'); 
+/*$database = mysqli_connect('localhost', 'root', 'root', 'todo'); 
 
 if (isset($_POST['submit'])) {
     $task = $_POST['task'];
@@ -11,7 +10,7 @@ if (isset($_POST['submit'])) {
     header('location: index.php');
     
 }
-
+*/
 
 
 /*require_once 'partials/init.php';
@@ -69,10 +68,10 @@ foreach($items as $item){
 
 
 
-<form method="POST" action=""
+<form method="POST" action="partials/add.php"
 method="post">
 <input type="text" name="task" class="task_input">
-<button type="submit" class="task_button" name="submit">Add Task</button>
+<input type="submit" class="task_button" name="submit" value="Add task">
 </form>
 
 
