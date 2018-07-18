@@ -12,34 +12,7 @@ if (isset($_POST['submit'])) {
 }
 */
 
-
-/*require_once 'partials/init.php';
-
-$itemsQuery =$database->prepare("
-SELECT id, title, completed, createdBy 
-FROM items
-WHERE user = :user
-");
-
-$itemsQuery->execute([
-
-    'user' => $_SESSION['user_id']    
-    
-]);
-
-$items = $itemsQuery->rowCount() ? $itemsQuery : [];
-
-foreach($items as $item){
-    echo $item['task'], '<br>';
-}
-    
-*/
-
-
 ?>
-
-
-
 
 
 <!DOCTYPE html>
