@@ -1,4 +1,5 @@
 <?php require_once 'partials/database.php';
+require_once 'partials/add.php';
 
 //connect to the database
 /*$database = mysqli_connect('localhost', 'root', 'root', 'todo'); 
@@ -59,7 +60,7 @@ method="post">
     </thread>
     
     <tbody>
-       <?php while ($row = mysqli_fetch_array($tasks)) { ?>
+       <?php while ($row = mysqli_fetch_array($result)) { ?>
        <tr>
            <td><?php echo $row['id']; ?></td>
            <td class="task"><?php echo $row['task']; ?></td>
