@@ -1,17 +1,13 @@
-<?php require_once 'partials/database.php';
-require_once 'partials/add.php';
+<?php 
 
-//connect to the database
-/*$database = mysqli_connect('localhost', 'root', 'root', 'todo'); 
+//First connect to Database to be able to retrieve informations
+//Then get all tasks from todo_php table
+//Finally store the data as objects in $data to use it in the body
 
-if (isset($_POST['submit'])) {
-    $task = $_POST['task'];
-    
-    mysqli_query($database, "INSERT INTO todo_php (title) VALUES ('$task')");
-    header('location: index.php');
-    
-}
-*/
+require_once 'partials/database.php';
+$require = $pdo->prepare("SELECT * FROM todo_php");
+$require->execute();
+$data = $require->fetchAll();
 
 ?>
 
