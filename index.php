@@ -31,7 +31,7 @@ $data = $require->fetchAll();
 
 <body>
 
-<div class="heading">
+<div id="heading">
     <h1>todo PHP MYSQL</h1>
 </div>
 
@@ -44,48 +44,33 @@ method="post">
 <input type="submit" class="task_button" name="submit" value="Add task">
 </form>
 
-
-<table>
-    <thread>
-        <tr>
-            <th>Number</th>
-            <th id="task_table">Task</th>
-             <th>Action</th>
-            
-        </tr>
-    </thread>
+<div id="flex">
+    <div>
+        <p>ID</p>
+        <p>Task</p>
+        <p>Action</p>
+    </div>
+<?php 
+    //Use of foreach ($data is an array of objects) and object written syntax to retrieve id and title:
+    //Foreach items (result found), display its id and its title using the short term for echo in php
+    foreach ($data as task) {?>
     
-    <tbody>
-       <?php while ($row = mysqli_fetch_array($result)) { ?>
-       <tr>
-           <td><?php echo $row['id']; ?></td>
-           <td class="task"><?php echo $row['task']; ?></td>
-           <td class="delete"><a href="#">X</a>
-           </td>
-            
-        </tr>
+<div> 
+   
+    <p><?=$task->id?></p>
+    <p><?=$task->title?></p>
+    <a id="delete" href="#">X</a>
     
-?php } ?>
-        
-    </tbody>
-</table>
-	<nav></nav>
+</div>
+   
+<?php } ?>
+    
+</div>
 
-	<header>
-	
-</header>
-
-
-<main> 
-
-
-
-</main>
-
-
-<footer></footer>
-
-
-</body>
-
+ </body>
+ 
 </html>
+
+
+
+	
