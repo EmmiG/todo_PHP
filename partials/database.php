@@ -1,15 +1,12 @@
-<?php $pdo = new PDO
-    (
-        "mysql:host=localhost;dbname=todo;charset=utf8",
-            "root",  // user
-            "root"   //password
-    );
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL); // E_ALL betyder att den hitta alla error meddelanden på database.php sidan, 0 = att den funktionen är av 
-
-?>
+<?php
+// Connect to database : Name : todo / host : localhost / username : root / password : 
+//dbname means that I add the name of my database here which is todo 
+$pdo = new PDO('mysql:dbname=todo;host=localhost', 'root', 'root');
 
 
-<!-- dbname means that I add the name of my database here which is todo -->
+
+// Set it to object mode and UTF-8 to accept european accents
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+$pdo->exec("set names utf8"); 
+
