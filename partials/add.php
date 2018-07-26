@@ -1,5 +1,13 @@
 <?php
 
+//Start a session on both add.php and index.php so that for isntance variables will exist on both pages and be able to communicate. Since the variables will be stored inside the SESSION superglobal
+
+session_start();
+
+?>
+
+<?php
+
 // Error if inputfield is empty, variable $errors
 
 $errors = "";
@@ -9,8 +17,10 @@ $errors = "";
 if(isset($_POST['submit'])) {
 $task = $_POST['task'];
 if(empty($task)){
-
-$errors = "Sorry you must fill in the task";
+    
+    
+// index.php needs to store the errors, you simply tell the computer "Since a session is started, I need to store a variable called errors in it to be able to access it in another page. Now, your errors variable will be accessible whenever you start your session on a page.
+$_SESSION['errors'] = "Sorry you must fill in the task";
     
 header("Location: ../index.php");
 }

@@ -1,5 +1,13 @@
 <?php 
 
+//Start a session on both add.php and index.php so that for instance variables will exist on both pages and be able to communicate. Since the variables will be stored inside the SESSION superglobal
+
+session_start();
+
+?>
+  
+  <?php 
+
   // First connect to DB to be able to retrieve informations
   // Then get all tasks from todo_php table
   // Finally store the data as objects in $data to use it in the body
@@ -27,9 +35,17 @@
 
 <form method="POST" action="partials/add.php" method="post">
 
-
- <?php if(isset($errors)) { ?>
-  <p><?= $errors ?></p>
+<!-- Since you now have your variable with its content inside the session superglobal, you need to be able to read it. 
+Now you're saying "whenever a variable called errors exists in the session superglobal, do what follows."
+ -->
+ <?php if(isset($_SESSION['errors'])) { ?> 
+ 
+ <!-- You now have a variable that exists and has something in it. Which means, whenever the variable will be there, the display message will be there for the user to see. You said "if the variable isset, echo it here" and since you've set it on the add.php page : It is. -->
+ 
+  <p><?php echo $_SESSION['errors']; ?>
+    <?php unset($_SESSION['errors']); ?>
+  
+  </p>
   
 <?php } ?>
   <input type="text" name="task" class="task_input">
