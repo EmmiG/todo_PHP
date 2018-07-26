@@ -1,4 +1,5 @@
 <?php
+
 // Connect to database : Name : todo / host : localhost / username : root / password : 
 //dbname means that I add the name of my database here which is todo 
 $pdo = new PDO('mysql:dbname=todo;host=localhost', 'root', 'root');

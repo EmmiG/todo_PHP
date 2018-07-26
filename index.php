@@ -1,4 +1,5 @@
 <?php 
+
   // First connect to DB to be able to retrieve informations
   // Then get all tasks from todo_php table
   // Finally store the data as objects in $data to use it in the body
@@ -25,28 +26,19 @@
 
 
 <form method="POST" action="partials/add.php" method="post">
+
+
+ <?php if(isset($errors)) { ?>
+  <p><?= $errors ?></p>
+  
+<?php } ?>
   <input type="text" name="task" class="task_input">
   <input type="submit" class="task_button" name="submit" value="Add task">
 </form>
 
 <!-- testar med att få till det -->
 	
-	 <?php
 
-if (isset($_POST['submit'])) {
-    
-       echo "Your task have sucessfully been added"; 
-    
-     if(empty($_POST['submit'])){
-         
-         echo"Sorry you have to add a task";
-     
-         
-     }
-
-    
-}
- ?>
 
 <div id="flex">
   <div>
