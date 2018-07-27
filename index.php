@@ -42,7 +42,7 @@ Now you're saying "whenever a variable called errors exists in the session super
  
  <!-- You now have a variable that exists and has something in it. Which means, whenever the variable will be there, the display message will be there for the user to see. You said "if the variable isset, echo it here" and since you've set it on the add.php page : It is. -->
  
-  <p><?php echo $_SESSION['errors']; ?>
+  <p id="errors"><?php echo $_SESSION['errors']; ?>
     <?php unset($_SESSION['errors']); ?>
   
   </p>

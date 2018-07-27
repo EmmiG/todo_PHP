@@ -17,6 +17,12 @@ form {
 	border: 1px solid blue;
 }
 
+form, errors{
+    
+    color: red;
+    
+}
+
 
 .task_input {
 	width: 73%;
