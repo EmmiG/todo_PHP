@@ -50,7 +50,7 @@ Now you're saying "whenever a variable called errors exists in the session super
 <?php } ?>
 
 
- <!-- If the user will add the task sucessfully this code will happen  -->
+ <!-- If the user will add the task sucessfully this PHP code will happen  -->
  
   <?php if(isset($_SESSION['taskAdded'])) { ?> 
  
@@ -67,10 +67,6 @@ Now you're saying "whenever a variable called errors exists in the session super
   <input type="text" name="task" class="task_input">
   <input type="submit" class="task_button" name="submit" value="Add task">
 </form>
-
-<!-- testar med att få till det -->
-	
-
 
 <div id="flex">
   <div>
@@ -89,18 +85,6 @@ Now you're saying "whenever a variable called errors exists in the session super
       </div>
   <?php } ?>
   
-  <!-- Message when user have added a task sucessfully -->
-  
-   <!--
-		if($_POST ["name"] == "") {
-		echo "<p>Your task have sucessfully been added</p>";
-	?> -->
-       
-      
-	
-	
-	
-  <!--Else it will be a message saying that you have to type something into the input field -->
   
 </div>
 
