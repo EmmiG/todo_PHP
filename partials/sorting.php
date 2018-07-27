@@ -8,11 +8,15 @@
         $sorting = $_POST['sorting'];
     }
     else {
-        $sorting = "DESC";
+        $sorting = "ASC";
     }
-	$require = $pdo->prepare("SELECT * FROM todo_php WHERE title = :title ORDER BY id $sorting"); 
+	$require = $pdo->prepare("SELECT * FROM todo_php WHERE title = :title ORDER BY id $sorting");
+
+    if(isset($_POST['submit'])) {
 	$require->execute(array(
 				":title"     => $_POST["title"]
 				));
 	$sorted_tasks = $require->fetchAll(PDO::FETCH_ASSOC);
+        
+        }
 ?>
