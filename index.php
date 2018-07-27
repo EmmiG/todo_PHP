@@ -12,6 +12,7 @@ session_start();
   // Then get all tasks from todo_php table
   // Finally store the data as objects in $data to use it in the body
   require_once 'partials/database.php';
+  require_once 'partials/sorting.php';
   $require = $pdo->prepare("SELECT * FROM todo_php");
   $require->execute();
   $data = $require->fetchAll();
