@@ -13,29 +13,31 @@ form {
 	margin: 30px auto;
 	border-radius: 5px;
 	padding: 10px;
-	background: purple;
+	background: black;
 	border: 1px solid blue;
 }
 
-form, errors{
-    
+form, #task_error{
     color: red;
-    
 }
 
+
+form, #task_added{
+    color: green;
+}
 
 .task_input {
 	width: 73%;
 	height: 15px;
 	padding: 10px;
-	border: 2px solid purple;
+	border: 2px solid blue;
 }
 
 .task_button {
 	height: 39px;
 	background: black;
-	color: yellow;
-	border: 2px solid orange;
+	color: blue;
+	border: 2px solid blue;
 	border-radius: 5px;
 	padding: 5px 20px;
 }
@@ -49,7 +51,7 @@ form, errors{
 /**********************************************************************************************************/
 
 #flex div {
-	color: orange;
+	color: blue;
 	font-weight: 600;
 	margin: 0 auto;
 	width: 50%;
@@ -57,7 +59,7 @@ form, errors{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border-bottom: 1px solid red;
+	border-bottom: 1px solid blue;
 }
 
 #flex div:not(:first-child):hover {
