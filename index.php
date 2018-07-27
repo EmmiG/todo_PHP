@@ -48,6 +48,20 @@ Now you're saying "whenever a variable called errors exists in the session super
   </p>
   
 <?php } ?>
+ 
+ 
+ <!-- If the user will add the task sucessfully this code will happen  -->
+ 
+  <?php if(isset($_SESSION['taskAdded'])) { ?> 
+ 
+ 
+  <p id="errors"><?php echo $_SESSION['taskAdded']; ?>
+    <?php unset($_SESSION['taskAdded']); ?>
+  
+  </p>
+  
+<?php } ?>
+ 
   <input type="text" name="task" class="task_input">
   <input type="submit" class="task_button" name="submit" value="Add task">
 </form>

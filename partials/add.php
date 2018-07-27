@@ -12,6 +12,10 @@ session_start();
 
 $errors = "";
 
+// Task sucessfully added
+
+$taskAdded = "";
+
 // Handling errors
 
 if(isset($_POST['submit'])) {
@@ -31,6 +35,10 @@ header("Location: ../index.php");
     $data = $pdo->prepare("INSERT INTO todo_php SET title = ?");
     $data->execute([$_POST['task']]);
     header("Location: ../index.php");
+        
+        
+  $_SESSION['taskAdded'] = "Your task have sucessfully been added";       
+        
 } 
 else {
     header("Location: ../index.php");
