@@ -11,12 +11,13 @@ session_start();
   // First connect to DB to be able to retrieve informations
   // Then get all tasks from todo_php table
   // Finally store the data as objects in $data to use it in the body
+// Order the database ids in DESC order so that the latest task will be at the top of the website
   require_once 'partials/database.php';
-  require_once 'partials/sorting.php';
-  $require = $pdo->prepare("SELECT * FROM todo_php");
-  $require->execute();
-  $data = $require->fetchAll();
-?>
+
+  $query = $pdo->query("SELECT * FROM todo_php ORDER BY id DESC");
+  $query->execute();
+  $data = $query->fetchAll();
+?>   
 
 
 <!DOCTYPE html>
