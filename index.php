@@ -17,8 +17,24 @@ session_start();
   $query = $pdo->query("SELECT * FROM todo_php ORDER BY id DESC");
   $query->execute();
   $data = $query->fetchAll();
-?>   
 
+
+ // Delete task 
+/* 
+* Variable delete_task store in $id via GET method when click on X.
+* Delete task with value stored in $id then redirect on the same page to reload and clean the task
+* User will DELETE FROM the database which is named todo_php
+* WHERE in the id column in the databse itself = the $id
+* I took out a LIMIT so that just one will be deleted at once, don't want multiples task to be deleted if someone typed several task id in the URL. Only want ONE id to be deleted at once, meaning only the first (or last) variable will have an effect in the script 
+* Location for the user to get back to is the index.php page
+*/
+
+if(isset($_GET['delete_task']))  {
+    $id = $_GET['delete_task'];
+    $query = $pdo->query("DELETE FROM todo_php WHERE id=".$id." LIMIT 1");
+    header("Location: index.php");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -82,8 +98,14 @@ Now you're saying "whenever a variable called errors exists in the session super
     foreach ($data as $task) {?>
       <div class="database_container">
         <p id="task_id"><?=$task->id?></p>
-        <p id="task_title"><?=$task->title?></p>
-        <a id="delete" href="#">X</a>
+        <p id="task_title"><?=$task->title?>
+        </p>
+        
+        <p class="delete_task">
+        <!-- Here I connected to the $_GET['delete_task'] and that it will be the id it takes away when you press the X button. When you have taken away the id it will delete all --> 
+        <a href="index.php?delete_task=<?=$task->id?>">X</a>
+        </p>
+        
       </div>
   <?php } ?>
   

@@ -66,7 +66,7 @@ form, #task_added{
 	background: green;
 }
 
-#delete {
+.delete_task, a {
 	color:red;
 	background:black;
 	padding:1px 6px;
