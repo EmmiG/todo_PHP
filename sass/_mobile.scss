@@ -50,7 +50,9 @@ form, #task_added{
 /*********************************************   NEWS   ***************************************************/
 /**********************************************************************************************************/
 
-#flex div {
+// Uncompleted todo
+
+#uncompleted_todo div {
 	color: blue;
 	font-weight: 600;
 	margin: 0 auto;
@@ -62,9 +64,29 @@ form, #task_added{
 	border-bottom: 1px solid blue;
 }
 
-#flex div:not(:first-child):hover {
+#uncompleted_todo div:not(:first-child):hover {
 	background: green;
 }
+
+// Completed todo
+
+/*#completed_todo div {
+	color: blue;
+	font-weight: 600;
+	margin: 0 auto;
+	width: 50%;
+	padding: 3px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid blue;
+}
+
+#completed_todo div:not(:first-child):hover {
+	background: green;
+}*/
+
+// Delete task
 
 .delete_task, a {
 	color:red;

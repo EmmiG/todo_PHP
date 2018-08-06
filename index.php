@@ -86,12 +86,23 @@ Now you're saying "whenever a variable called errors exists in the session super
   <input type="submit" class="task_button" name="submit" value="Add task">
 </form>
 
-<div id="flex">
+<div id="uncompleted_todo">
   <div>
     <p>ID</p>
     <p>Task</p>
     <p>Action</p>
   </div>
+  
+  <!-- completed todo --> 
+  
+  <div id="container_todos">
+  <div>
+   <ul id="task_to_do">
+   </ul>
+   <ul id="task_done">
+   </ul>
+  </div> 
+  
   <?php
     // Use of foreach ($data is an array of objects) and object written syntax to retrieve id and title :
     // For each items found (result found), display its id and its title using the short term for echo in php
@@ -110,7 +121,9 @@ Now you're saying "whenever a variable called errors exists in the session super
   <?php } ?>
   
   
-</div>
+</div> <!-- uncompleted_todo -->
+
+  </div> <!-- completed_todo -->
 
 </body>
 </html>
