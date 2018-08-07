@@ -108,10 +108,15 @@ Now you're saying "whenever a variable called errors exists in the session super
         <a href="index.php?delete_task=<?=$task->id?>">X</a>
         </p>
         
+         <p class="task_done_todo">
+        <!--  --> 
+        <a href="index.php?task_done=<?=$task->id?>" class="done_button">Mark as done</a>
+        </p>
+        
       </div>
   <?php } ?>
   
-  <div class"line_test"></div>
+  <div class="line_test"></div>
   
    <!-- completed todo --> 
   

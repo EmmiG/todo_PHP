@@ -57,7 +57,7 @@ form, #task_added{
 	font-weight: 600;
 	margin: 0 auto;
 	width: 50%;
-	padding: 3px 20px;
+	//padding: 3px 20px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -138,3 +138,13 @@ ul{
     padding: 0;
 }
 
+
+// Done button
+
+p.task_done_todo, a.done_button{
+    display: inline-block;
+    font-size:0.8em;
+    background-color: red;
+    color: aquamarine;
+    //padding: 3px 6px;
+}
