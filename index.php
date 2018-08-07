@@ -93,16 +93,7 @@ Now you're saying "whenever a variable called errors exists in the session super
     <p>Action</p>
   </div>
   
-  <!-- completed todo --> 
-  
-  <div id="container_todos">
-  <div>
-   <ul id="task_to_do">
-   </ul>
-   <ul id="task_done">
-   </ul>
-  </div> 
-  
+ 
   <?php
     // Use of foreach ($data is an array of objects) and object written syntax to retrieve id and title :
     // For each items found (result found), display its id and its title using the short term for echo in php
@@ -120,10 +111,22 @@ Now you're saying "whenever a variable called errors exists in the session super
       </div>
   <?php } ?>
   
+  <div class"line_test"></div>
   
-</div> <!-- uncompleted_todo -->
+   <!-- completed todo --> 
+  
+  <div class="container_todos">
+  <div class="wrapper_todos">
+   <ul id="task_to_do">
+   </ul>
+   <ul id="task_done">
+   </ul>
+  </div> 
+  
+  
+</div> <!-- container_todos -->
 
-  </div> <!-- completed_todo -->
+  </div> <!-- uncompleted_todo -->
 
 </body>
 </html>
