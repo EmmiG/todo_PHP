@@ -105,7 +105,7 @@ Now you're saying "whenever a variable called errors exists in the session super
         
         <p class="delete_task">
         <!-- Here I connected to the $_GET['delete_task'] and that it will be the id it takes away when you press the X button. When you have taken away the id it will delete all --> 
-        <a href="index.php?delete_task=<?=$task->id?>">X</a>
+        <a href="index.php?delete_task=<?=$task->id?>" class="delete_button">X</a>
         </p>
         
          <p class="task_done_todo">

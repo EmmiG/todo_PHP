@@ -1,0 +1,35 @@
+// Buttons
+
+.task_button:hover{
+     opacity: 1;
+    background-color: green;
+    border: 2px solid green;
+}
+
+.done_button:hover{
+    opacity: 1;
+    background-color: green;
+    border: 2px solid green;
+    
+}
+
+.delete_button:hover{
+    opacity: 1;
+    background-color: green;
+    border: 7px solid green;
+    
+}
+
+a.done_button{
+    font-size: 20px;
+      height: 39px;
+}
+
+
+.delete_button{
+   
+    font-size: 18px;
+      height: 25px;
+    width: 15px;
+    //margin-left: 5px;
+}
