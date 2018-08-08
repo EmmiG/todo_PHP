@@ -33,3 +33,11 @@ a.done_button{
     width: 15px;
     //margin-left: 5px;
 }
+
+#uncompleted_todo div{
+    width: 50%;
+}
+
+#uncompleted_todo div:not(:first-child):hover {
+	background: blue;
+}

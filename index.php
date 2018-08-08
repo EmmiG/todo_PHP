@@ -88,9 +88,8 @@ Now you're saying "whenever a variable called errors exists in the session super
 
 <div id="uncompleted_todo">
   <div>
-    <p>ID</p>
     <p>Task</p>
-    <p>Action</p>
+    <p id="delete_or_mark_as_done">Action</p>
   </div>
   
  
@@ -99,7 +98,7 @@ Now you're saying "whenever a variable called errors exists in the session super
     // For each items found (result found), display its id and its title using the short term for echo in php
     foreach ($data as $task) {?>
       <div class="database_container">
-        <p id="task_id"><?=$task->id?></p>
+        <!--<p id="task_id"></p>-->
         <p id="task_title"><?=$task->title?>
         </p>
         
