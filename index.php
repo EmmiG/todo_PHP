@@ -110,7 +110,7 @@ Now you're saying "whenever a variable called errors exists in the session super
          <p class="task_done_todo">
         <!--  -->
         
-        <a href="#" class="done_button">Mark as done</a>
+        <a href="mark.php?task_done_todo=<?=$task->id?>" class="done_button">Mark as done</a>
         
       
         </p>
