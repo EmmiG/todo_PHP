@@ -8,15 +8,22 @@ session_start();
   
   <?php 
 
-  // First connect to DB to be able to retrieve informations
-  // Then get all tasks from todo_php table
-  // Finally store the data as objects in $data to use it in the body
-// Order the database ids in DESC order so that the latest task will be at the top of the website
+  /* First connect to DB to be able to retrieve informations
+  * Then get all tasks from todo_php table
+  *WHERE I select the column completed in my database, the $undone_data will have 0 and the $done_data will have 1. In the database it will do the change from 0 to 1 and the other way around depending if the user want to mark it as done or unmark it again to become an unfinished task again. 
+  * Finally store the data as objects in $undone_data to use it in the body also make it with $done_data
+* Order the database ids in DESC order so that the latest task will be at the top of the website
+*/
   require_once 'partials/database.php';
 
-  $query = $pdo->query("SELECT * FROM todo_php ORDER BY id DESC");
+  $query = $pdo->query("SELECT * FROM todo_php WHERE completed = 0 ORDER BY id DESC");
   $query->execute();
-  $data = $query->fetchAll();
+  $undone_data = $query->fetchAll();
+
+  
+  $query = $pdo->query("SELECT * FROM todo_php WHERE completed = 1 ORDER BY id DESC");
+  $query->execute();
+  $done_data = $query->fetchAll();
 
 
  // Delete task 
@@ -53,12 +60,17 @@ if(isset($_GET['delete_task']))  {
 
 <form method="POST" action="partials/add.php" method="post">
 
-<!-- Since you now have your variable with its content inside the session superglobal, you need to be able to read it. 
-Now you're saying "whenever a variable called errors exists in the session superglobal, do what follows."
+<!-- 
+*Since you now have your variable with its content inside the session superglobal, you need to be able to read it. 
+*Now you're saying "whenever a variable called errors exists in the session superglobal, do what follows."
  -->
  <?php if(isset($_SESSION['errors'])) { ?> 
  
- <!-- You now have a variable that exists and has something in it. Which means, whenever the variable will be there, the display message will be there for the user to see. You said "if the variable isset, echo it here" and since you've set it on the add.php page : It is. -->
+ <!-- 
+ *You now have a variable that exists and has something in it. Which means, whenever the variable will be there, the display message will be there for the user to see. 
+ *You said "if the variable isset, echo it here" and since you've set it on the add.php page : It is. 
+ 
+ -->
  
   <p id="task_error"><?= $_SESSION['errors']; ?>
     <?php unset($_SESSION['errors']); ?>
@@ -93,12 +105,18 @@ Now you're saying "whenever a variable called errors exists in the session super
   </div>
   
  
+ 
+ <!-- undone data -->
+ 
   <?php
-    // Use of foreach ($data is an array of objects) and object written syntax to retrieve id and title :
-    // For each items found (result found), display its id and its title using the short term for echo in php
-    foreach ($data as $task) {?>
+    /* 
+    *Use of foreach ($undone_data is an array of objects) and object written syntax to retrieve id and title :
+    *For each items found (result found), display its id and its title using the short term for echo in php
+    *using the $undone_data here and doing a foreach loop
+    */
+    
+    foreach ($undone_data as $task) {?>
       <div class="database_container">
-        <!--<p id="task_id"></p>-->
         <p id="task_title"><?=$task->title?>
         </p>
         
@@ -108,9 +126,8 @@ Now you're saying "whenever a variable called errors exists in the session super
         </p>
         
          <p class="task_done_todo">
-        <!--  -->
         
-        <a href="mark.php?task_done_todo=<?=$task->id?>" class="done_button">Mark as done</a>
+        <a href="partials/mark.php?task_done=<?=$task->id?>" class="done_button">Mark as done</a>
         
       
         </p>
@@ -118,20 +135,41 @@ Now you're saying "whenever a variable called errors exists in the session super
       </div>
   <?php } ?>
   
-   <!-- completed todo --> 
-  
-  <div class="container_todos">
-  <div class="wrapper_todos">
-   <ul id="task_to_do">
-   </ul>
-   <ul id="task_done">
-   </ul>
-  </div> 
   
   
-</div> <!-- container_todos -->
-
-  </div> <!-- uncompleted_todo -->
+  
+  <!-- done data -->
+  
+  
+  
+  <?php
+    /* 
+    *making a loop again but for the done data.
+    *Use of foreach ($done_data is an array of objects) and object written syntax to retrieve id and title :
+    *For each items found (result found), display its id and its title using the short term for echo in php
+    */
+    foreach ($done_data as $task) {?>
+      <div class="database_container_2">
+        <p id="task_title"><?=$task->title?>
+        </p>
+        
+        <p class="delete_task">
+        <!-- Here I connected to the $_GET['delete_task'] and that it will be the id it takes away when you press the X button. When you have taken away the id it will delete all --> 
+        <a href="index.php?delete_task=<?=$task->id?>" class="delete_button">X</a>
+        </p>
+        
+         <p class="task_done_todo">
+        
+        <a href="partials/mark.php?task_undone=<?=$task->id?>" class="done_button">Mark as undone</a>
+        
+      
+        </p>
+        
+      </div>
+  <?php } ?>
+  
+ 
+ </div> <!-- uncompleted_todo -->
 
 </body>
 </html>
