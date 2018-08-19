@@ -105,7 +105,7 @@ if(isset($_GET['delete_task']))  {
   </div>
   
  
- 
+
  <!-- undone data -->
  
   <?php
@@ -119,24 +119,29 @@ if(isset($_GET['delete_task']))  {
       <div class="database_container">
         <p id="task_title"><?=$task->title?>
         </p>
+         <div id="undone_button_container">
         
-        <p class="delete_task">
-        <!-- Here I connected to the $_GET['delete_task'] and that it will be the id it takes away when you press the X button. When you have taken away the id it will delete all --> 
-        <a href="index.php?delete_task=<?=$task->id?>" class="delete_button">X</a>
-        </p>
-        
+       
          <p class="task_done_todo">
         
         <a href="partials/mark.php?task_done=<?=$task->id?>" class="done_button">Mark as done</a>
         
-      
+       
         </p>
+        
+         <p class="delete_task">
+        <!-- Here I connected to the $_GET['delete_task'] and that it will be the id it takes away when you press the X button. When you have taken away the id it will delete all --> 
+        <a href="index.php?delete_task=<?=$task->id?>" class="delete_button">X</a>
+        </p>
+        </div> <!-- undone_button_container-->
         
       </div>
   <?php } ?>
   
   
+
   
+  <div id="clear"></div>
   
   <!-- done data -->
   
@@ -153,11 +158,6 @@ if(isset($_GET['delete_task']))  {
         <p id="task_title"><?=$task->title?>
         </p>
         
-        <p class="delete_task">
-        <!-- Here I connected to the $_GET['delete_task'] and that it will be the id it takes away when you press the X button. When you have taken away the id it will delete all --> 
-        <a href="index.php?delete_task=<?=$task->id?>" class="delete_button">X</a>
-        </p>
-        
          <p class="task_done_todo">
         
         <a href="partials/mark.php?task_undone=<?=$task->id?>" class="done_button">Mark as undone</a>
@@ -165,9 +165,17 @@ if(isset($_GET['delete_task']))  {
       
         </p>
         
+        <p class="delete_task">
+        <!-- Here I connected to the $_GET['delete_task'] and that it will be the id it takes away when you press the X button. When you have taken away the id it will delete all --> 
+        <a href="index.php?delete_task=<?=$task->id?>" class="delete_button">X</a>
+        </p>
+        
+        
+        
       </div>
   <?php } ?>
   
+    
  
  </div> <!-- uncompleted_todo -->
 

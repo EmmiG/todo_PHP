@@ -1,5 +1,5 @@
 #heading {
-	width: 60%;
+	width: 100%;// make the heading a width of 100%
 	margin: 30px auto;
 	text-align: center;
 	color: aqua;
@@ -9,7 +9,7 @@
 }
 
 form {
-	width: 70%;
+	width: 50%;
 	margin: 30px auto;
 	border-radius: 5px;
 	padding: 20px;
@@ -68,8 +68,7 @@ form, .task_button{
 	color: #bec4b6;
 	font-weight: 600;
 	margin: 0 auto;
-	width: 100%;
-	//padding: 3px 20px;
+	max-width: 80%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -78,39 +77,9 @@ form, .task_button{
   
 }
 
-// Completed todo
-
-/*#completed_todo div {
-	color: blue;
-	font-weight: 600;
-	margin: 0 auto;
-	width: 50%;
-	padding: 3px 20px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	border-bottom: 1px solid blue;
-}
-
-#completed_todo div:not(:first-child):hover {
-	background: green;
-}*/
-
-// Delete task
-
-.delete_task, a {
-
-    //height: 35px;
-    //width: 35px;
-    
-}
 
 .container_todos, .wrapper_todos{
-       padding-top: 40px;
-       
-      
-    
-    
+       padding-top: 40px;  
 }
 
 .wrapper_todos{
@@ -126,16 +95,6 @@ form, .task_button{
 
     
 } 
-
-.database_container{
-    //width: 100%;
-}
-
-.database_container,p#task_title{
-   
-      
-  
-}
 
 ul{
     margin: 0;
@@ -154,46 +113,53 @@ a.done_button{
 	border: 2px solid blue;
 	border-radius: 5px;
 	padding: 5px 20px;
-    //font-size: 9px;
     width: 50%;
     height: 40%;
     text-decoration:none;
+    max-width: 50%;
+   
     
     
 }
 
-/*#task_title, .task_done_todo, .done_button{
-    text-decoration: line-through;
+
+.database_container,#task_title{
+    max-width: 50%;
     
 }
-*/
 
 .delete_button{
     display: inline-block;
-   // height: 60px;
 	background: black;
 	border: 2px solid blue;
 	border-radius: 5px;
-	//padding: 5px 20px;
-    //font-size: 9px;
       height: 25px;
     width: 25px;
     	color:red;
 	
 	text-decoration:none;
-     margin-left: 80px;
+     margin-left: 30px;
     padding:6px 8px;
   
     
 }
 
 
-a.delete_button:placeholder{
-     
-    
-}
-
 #delete_or_mark_as_done{
     margin-right: 100px;
 }
 
+
+
+#undone_button_container, .done_button, .delete_button{
+    display: flex;
+    justify-content: flex-end;
+    max-width: 25%;
+}
+
+#clear{
+    clear:both;
+}
+.database-container, #undone_button_container{
+    max-width: 50%;
+}
