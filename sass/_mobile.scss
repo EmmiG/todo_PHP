@@ -1,5 +1,9 @@
+
+
+/**********heading**********/
+
 #heading {
-	width: 100%;// make the heading a width of 100%
+	width: 60%;// make the heading a width of 100%
 	margin: 30px auto;
 	text-align: center;
 	color: aqua;
@@ -7,6 +11,9 @@
 	border: 2px solid blue;
 	border-radius: 20px;
 }
+
+
+/**********user input & button **********/
 
 form {
 	width: 50%;
@@ -18,13 +25,15 @@ form {
 	border: 1px solid blue;
 }
 
-form, #task_error{
+#task_error{
     color: red;
+    margin: 0px 0px 10px 0px;
 }
 
 
-form, #task_added{
+#task_added{
     color: green;
+    margin: 0px 0px 10px 0px;
 }
 
 .task_input {
@@ -34,132 +43,85 @@ form, #task_added{
 	border: 2px solid blue;
 }
 
-form, .task_button{
-    padding-bottom: 40px;
-}
 
 .task_button {
-	height: 39px;
-	background: black;
+    width: 100%;
+    background: black;
 	color: blue;
 	border: 2px solid blue;
 	border-radius: 5px;
-	padding: 5px 30px;
-    margin-top: 30px;
-    margin-right: 10px;
-    margin-left: 10px;
-    width: 100%;
+	padding: 10px 30px;
+    margin: 30px 10px 0px 10px;
     align-items: center;
     
 }
 
+/*.database_container, #undone_button_container{
+    justify-content: space-around;
+}*/
 
-.task {
-	text-align:left;
-}
+/**********
 
-/**********************************************************************************************************/
-/*********************************************   NEWS   ***************************************************/
-/**********************************************************************************************************/
+**********/
 
-// Uncompleted todo
+/**********tasks
+
+**********/
+
 
 #uncompleted_todo div {
 	color: #bec4b6;
-	font-weight: 600;
-	margin: 0 auto;
-	max-width: 80%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border-bottom: 1px solid blue;
-   
-  
 }
 
-
-.container_todos, .wrapper_todos{
-       padding-top: 40px;  
+#task_title {
+    margin-left: 5px;
+    word-wrap: break-word;
+    max-width: 50%;
 }
 
-.wrapper_todos{
-   
-    border: 1px solid black;
-    max-height: 800px;
-    width: 73%;
-    height: 800px;
-     padding-top: 40px;
-      float: center;
-    margin-right: 40px;
-    
-
-    
-} 
-
-ul{
-    margin: 0;
-    padding: 0;
+#delete_or_mark_as_done{
+    margin-right: 10%;
 }
 
-
-// Done button
 
 a.done_button{
     display: inline-block;
-    font-size:0.7em;
-    height: 20px;
-	background: black;
-	color: blue;
-	border: 2px solid blue;
+    background: black;
+    color: blue;
+    border: 2px solid blue;
 	border-radius: 5px;
-	padding: 5px 20px;
-    width: 50%;
-    height: 40%;
-    text-decoration:none;
-    max-width: 50%;
-   
-    
-    
+	padding: 5px 20px;;
+    text-decoration:none;   
 }
 
-
-.database_container,#task_title{
-    max-width: 50%;
-    
-}
 
 .delete_button{
-    display: inline-block;
 	background: black;
 	border: 2px solid blue;
 	border-radius: 5px;
-      height: 25px;
-    width: 25px;
-    	color:red;
-	
+    color:red;
 	text-decoration:none;
-     margin-left: 30px;
     padding:6px 8px;
-  
+    margin: 0px 5px;
     
 }
 
 
-#delete_or_mark_as_done{
-    margin-right: 100px;
+.database-container, .database_container_2{
+    width: 100%;
+    margin: 0px auto;
+    border-bottom: 1px solid blue;
 }
 
-
-
-#undone_button_container, .done_button, .delete_button{
-    display: flex;
-    justify-content: flex-end;
-    max-width: 25%;
-}
 
 #clear{
-    clear:both;
+    margin: 30px 0px;
 }
-.database-container, #undone_button_container{
-    max-width: 50%;
+
+.database_container_2{
+    background: green;
+    
 }

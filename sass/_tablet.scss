@@ -22,21 +22,14 @@
 
 a.done_button{
     font-size: 20px;
-      height: 39px;
 }
 
 
 .delete_button{
    
     font-size: 18px;
-      height: 25px;
-    width: 15px;
-    //margin-left: 5px;
 }
 
-#uncompleted_todo div{
-    width: 50%;
-}
 
 #uncompleted_todo div:not(:first-child):hover {
 	background: blue;

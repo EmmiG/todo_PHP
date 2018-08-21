@@ -157,6 +157,7 @@ if(isset($_GET['delete_task']))  {
       <div class="database_container_2">
         <p id="task_title"><?=$task->title?>
         </p>
+        <div id="done_button_container">
         
          <p class="task_done_todo">
         
@@ -170,7 +171,7 @@ if(isset($_GET['delete_task']))  {
         <a href="index.php?delete_task=<?=$task->id?>" class="delete_button">X</a>
         </p>
         
-        
+        </div> <!-- done_button_container-->
         
       </div>
   <?php } ?>
