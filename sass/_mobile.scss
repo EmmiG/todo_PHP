@@ -1,5 +1,5 @@
 body{
-    background: black;
+    background: #181818;
 }
 
 /**********heading**********/
@@ -39,6 +39,7 @@ form {
       font-size: 11px;
 }
 
+
 .task_input {
 	width: 100%;  // User can write a longer input message instead of having it limit
 	height: 15px;
@@ -75,10 +76,6 @@ form {
     max-width: 50%;
 }
 
-#delete_or_mark_as_done{
-    margin-right: 10%;
-}
-
 a.done_button{
     display: inline-block;
     background: #2d6cc4;
@@ -94,13 +91,14 @@ a.done_button{
 	background: #2d6cc4;
 	//border: 2px solid white;
 	border-radius: 5px;
-    color:red;
+    color:white;
+    background: #ea5645;
 	text-decoration:none;
     padding:6px 8px;
     margin: 0px 5px;
 }
 
-.undone_database-container, .done_database_container{
+.undone_database_container, .done_database_container{
     width: 100%;
     margin: 0px auto;
     border-bottom: 1px solid white;
@@ -112,5 +110,38 @@ a.done_button{
 
 .done_database_container{
     background: green;
+    
+}
+
+
+
+/*testar med stylingen*/
+
+/*#task_error, #task_added {
+	//text-align: center;
+	//text-decoration: underline;
+} */
+
+
+
+.done_database_container #task_title {
+	text-decoration: line-through;
+}
+
+.done_database_container {
+	background: #173a00;
+}
+
+#task_paragraph{
+    font-size: 1.1em;
+    font-weight : 600;
+     text-decoration: underline
+}
+
+#delete_or_mark_as_done{
+    
+     font-size: 1.1em;
+    font-weight : 600;
+     text-decoration: underline
     
 }
