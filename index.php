@@ -49,12 +49,12 @@ if(isset($_GET['delete_task']))  {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-  <title>todo PHP and MYSQL</title>
+  <title>Todo PHP and MYSQL</title>
 </head>
 <body>
 
 <div id="heading">
-  <h1>todo PHP MYSQL</h1>
+  <h1>Todo PHP MYSQL</h1>
 </div>
 
 
@@ -98,9 +98,9 @@ if(isset($_GET['delete_task']))  {
   <input type="submit" class="task_button" name="submit" value="Add task">
 </form>
 
-<div id="uncompleted_todo">
+<div id="todo_list">
   <div>
-    <p>Task</p>
+    <p id="task_paragraph">Task</p>
     <p id="delete_or_mark_as_done">Action</p>
   </div>
   
@@ -116,7 +116,7 @@ if(isset($_GET['delete_task']))  {
     */
     
     foreach ($undone_data as $task) {?>
-      <div class="database_container">
+      <div class="undone_database_container">
         <p id="task_title"><?=$task->title?>
         </p>
          <div id="undone_button_container">
@@ -135,7 +135,7 @@ if(isset($_GET['delete_task']))  {
         </p>
         </div> <!-- undone_button_container-->
         
-      </div>
+      </div> <!-- undone_database_container-->
   <?php } ?>
   
   
@@ -154,7 +154,7 @@ if(isset($_GET['delete_task']))  {
     *For each items found (result found), display its id and its title using the short term for echo in php
     */
     foreach ($done_data as $task) {?>
-      <div class="database_container_2">
+      <div class="done_database_container">
         <p id="task_title"><?=$task->title?>
         </p>
         <div id="done_button_container">
@@ -173,12 +173,12 @@ if(isset($_GET['delete_task']))  {
         
         </div> <!-- done_button_container-->
         
-      </div>
+      </div> <!-- done_database_container-->
   <?php } ?>
   
     
  
- </div> <!-- uncompleted_todo -->
+ </div> <!-- todo_list -->
 
 </body>
 </html>

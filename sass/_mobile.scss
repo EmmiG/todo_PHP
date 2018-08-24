@@ -1,17 +1,18 @@
-
+body{
+    background: black;
+}
 
 /**********heading**********/
 
 #heading {
-	width: 60%;// make the heading a width of 100%
+	width: 90%;// make the heading a width of 100%
 	margin: 30px auto;
 	text-align: center;
-	color: aqua;
-	background: blue;
-	border: 2px solid blue;
+	color: white;
+	background: #2d6cc4;
+	border: 2px solid #2d6cc4;
 	border-radius: 20px;
 }
-
 
 /**********user input & button **********/
 
@@ -21,8 +22,8 @@ form {
 	border-radius: 5px;
 	padding: 20px;
     padding-right: 45px;
-	background: black;
-	border: 1px solid blue;
+	background: #95bbc2;
+	//border: 1px solid white;
 }
 
 #task_error{
@@ -40,15 +41,15 @@ form {
 	width: 100%;  // User can write a longer input message instead of having it limit
 	height: 15px;
 	padding: 10px;
-	border: 2px solid blue;
+	border: 2px solid #2d6cc4;
 }
 
 
 .task_button {
     width: 100%;
-    background: black;
-	color: blue;
-	border: 2px solid blue;
+    background: #2d6cc4;
+	color: white;
+	border: 2px solid black;
 	border-radius: 5px;
 	padding: 10px 30px;
     margin: 30px 10px 0px 10px;
@@ -56,21 +57,11 @@ form {
     
 }
 
-/*.database_container, #undone_button_container{
-    justify-content: space-around;
-}*/
-
-/**********
-
-**********/
-
-/**********tasks
-
-**********/
+/**********tasks**********/
 
 
-#uncompleted_todo div {
-	color: #bec4b6;
+#todo_list div {
+	color: #95bbc2;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -86,12 +77,11 @@ form {
     margin-right: 10%;
 }
 
-
 a.done_button{
     display: inline-block;
-    background: black;
-    color: blue;
-    border: 2px solid blue;
+    background: #2d6cc4;
+    color: white;
+    //border: 2px solid white;
 	border-radius: 5px;
 	padding: 5px 20px;;
     text-decoration:none;   
@@ -99,29 +89,26 @@ a.done_button{
 
 
 .delete_button{
-	background: black;
-	border: 2px solid blue;
+	background: #2d6cc4;
+	//border: 2px solid white;
 	border-radius: 5px;
     color:red;
 	text-decoration:none;
     padding:6px 8px;
     margin: 0px 5px;
-    
 }
 
-
-.database-container, .database_container_2{
+.undone_database-container, .done_database_container{
     width: 100%;
     margin: 0px auto;
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid white;
 }
-
 
 #clear{
     margin: 30px 0px;
 }
 
-.database_container_2{
+.done_database_container{
     background: green;
     
 }
