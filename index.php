@@ -47,6 +47,7 @@ if(isset($_GET['delete_task']))  {
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
   <title>Todo PHP and MYSQL</title>
@@ -176,10 +177,15 @@ if(isset($_GET['delete_task']))  {
       </div> <!-- done_database_container-->
   <?php } ?>
   
-    
- 
  </div> <!-- todo_list -->
-
+ 
+ 
+     <footer>
+       
+    <p> Username: EmmiG </p>
+    <a href="https://github.com/EmmiG/todo_PHP">Click here to come to my gitHub repository todo_PHP</a> 
+</footer>
+        
 </body>
 </html>
 	
