@@ -2,6 +2,17 @@ body{
     background: #181818;
 }
 
+#todo_list div {
+	color: #95bbc2;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#clear{
+    margin: 30px 0px;
+}
+
 /**********heading**********/
 
 #heading {
@@ -32,13 +43,11 @@ form {
     font-size: 11px;
 }
 
-
 #task_added{
     color: green;
     margin: 0px 0px 10px 0px;
       font-size: 11px;
 }
-
 
 .task_input {
 	width: 100%;  // User can write a longer input message instead of having it limit
@@ -60,36 +69,17 @@ form {
     
 }
 
-/**********tasks**********/
-
-
-#todo_list div {
-	color: #95bbc2;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-#task_title {
-    margin-left: 5px;
-    word-wrap: break-word;
-    max-width: 50%;
-}
-
 a.done_button{
     display: inline-block;
     background: #2d6cc4;
     color: white;
-    //border: 2px solid white;
 	border-radius: 5px;
 	padding: 5px 20px;;
     text-decoration:none;   
 }
 
-
 .delete_button{
 	background: #2d6cc4;
-	//border: 2px solid white;
 	border-radius: 5px;
     color:white;
     background: #ea5645;
@@ -98,31 +88,40 @@ a.done_button{
     margin: 0px 5px;
 }
 
+/**********tasks**********/
+
+#task_title {
+    margin-left: 5px;
+    word-wrap: break-word;
+    max-width: 50%;
+}
+
+#task_paragraph{
+    font-size: 1.1em;
+    font-weight : 600;
+    text-decoration: underline
+}
+
+#delete_or_mark_as_done{
+    font-size: 1.1em;
+    font-weight : 600;
+    text-decoration: underline
+}
+
+
+/**********container**********/
+
+
 .undone_database_container, .done_database_container{
     width: 100%;
     margin: 0px auto;
     border-bottom: 1px solid white;
 }
 
-#clear{
-    margin: 30px 0px;
-}
 
 .done_database_container{
     background: green;
-    
 }
-
-
-
-/*testar med stylingen*/
-
-/*#task_error, #task_added {
-	//text-align: center;
-	//text-decoration: underline;
-} */
-
-
 
 .done_database_container #task_title {
 	text-decoration: line-through;
@@ -132,29 +131,17 @@ a.done_button{
 	background: #173a00;
 }
 
-#task_paragraph{
-    font-size: 1.1em;
-    font-weight : 600;
-     text-decoration: underline
-}
 
-#delete_or_mark_as_done{
-    
-     font-size: 1.1em;
-    font-weight : 600;
-     text-decoration: underline
-    
-}
+/**********footer**********/
 
 footer{
     margin-top: 30px;
     background: #2d6cc4;
     height: 80px;
     width: 100%;
-     text-align: center;
-     display: inline-block;
+    text-align: center;
+    display: inline-block;
 }
-
 
 footer p {
     font-size: 16px;
