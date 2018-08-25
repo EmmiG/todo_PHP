@@ -1,5 +1,4 @@
 <!--
-  
    *Did a GET and isset and 4 security code to secure the input 
    *first is isset
    *second is !== null meaning basicly nothing
@@ -10,11 +9,10 @@
    *User gets located to the index.php. 
    *Elseif you do the 4 security again but with undone, change it to 0 instead of 1.
    *if none of this happens the else will be that the user get redirected
+-->
 
-   -->
-   
 
-   <?php 
+<?php 
     require_once 'database.php';
 
     if(isset($_GET['task_done']))  {
@@ -26,10 +24,7 @@
         $query = $pdo->query("UPDATE todo_PHP SET completed = 0 WHERE id=".$id);
         header("Location: ../index.php");
     } else {
-        // The user tried accessing the page without using the right interface. Gets redirected.
+// The user tried accessing the page without using the right interface. Gets redirected.
         header("Location: ../index.php");
     }
 ?>
-    
-    
-
